@@ -56,7 +56,7 @@ function getTypeEffectiveness(attackerTypes, defenderTypes) {
     // Check against all defender types
     for (const defType of defenderTypes) {
         if (effectiveness[defType] !== undefined) {
-            multiplier *= effectiveness[defType];
+            multiplier += effectiveness[defType];
         }
     }
     
@@ -150,6 +150,8 @@ function executeAttack(attacker, defender, isPlayerAttack) {
     
     // Apply damage
     defender.hp = Math.max(0, defender.hp - result.damage);
+    
+    delete result.effectivenessMsg;
     
     return {
         attacker: attacker.name,
