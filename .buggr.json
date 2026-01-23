@@ -1,0 +1,25 @@
+{
+  "buggerId": "cmkqr6vaz0001ju04yxf70t6m",
+  "stressLevel": "low",
+  "bugCount": 2,
+  "createdAt": "2026-01-23T10:43:41.849Z",
+  "executedAt": "2026-01-23T10:44:07.391Z",
+  "aiStartedAt": "2026-01-23T10:43:42.709Z",
+  "aiCompletedAt": "2026-01-23T10:44:07.390Z",
+  "aiDurationMs": 24681,
+  "symptoms": [
+    "Battle screen combat log: Type effectiveness calculations are completely wrong. Super effective attacks show impossible multipliers like 3.5x instead of 2x",
+    "Battle screen effectiveness messages: Attack effectiveness text shows as undefined instead of displaying 'It's super effective!' or 'It's not very effective...'"
+  ],
+  "filesBuggered": [
+    "js/combat.js"
+  ],
+  "changes": [
+    "Changed multiplication operator to addition operator in getTypeEffectiveness function: 'multiplier *= effectiveness[defType]' became 'multiplier += effectiveness[defType]'",
+    "Added 'delete result.effectivenessMsg' before returning the result object in executeAttack function"
+  ],
+  "originalCommitSha": "6a9afefc5d890c4d24f3d7a68d8766c696c9c74e",
+  "owner": "Joseph-Adedayo",
+  "repo": "stresst-pokemon-battle",
+  "branch": "buggr-main-20260123-104336"
+}
